@@ -14,6 +14,8 @@ const currencyEl_two = document.getElementById("currency-two");
 const amountEl_two = document.getElementById("amount-two");
 const rateEl = document.getElementById("rate");
 const swap = document.getElementById("swap");
+
+// function definition
 function calculate() {
   const currency_one = currencyEl_one.value;
   const currency_two = currencyEl_two.value;
@@ -23,7 +25,8 @@ function calculate() {
     .then((feedback_data) => {
       // console.log(feedback_data);
       const rate = feedback_data.rates[currency_two];
-      console.log(rate);
+      // console.log(rate);
+      rateEl.innerText = `1${currency_one} = ${rate}${currency_two}`;
     });
 }
 
