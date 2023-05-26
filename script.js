@@ -27,6 +27,8 @@ function calculate() {
       const rate = feedback_data.rates[currency_two];
       // console.log(rate);
       rateEl.innerText = `1${currency_one} = ${rate}${currency_two}`;
+
+      amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
     });
 }
 
@@ -35,4 +37,12 @@ currencyEl_one.addEventListener("change", calculate);
 amountEl_one.addEventListener("input", calculate);
 currencyEl_two.addEventListener("change", calculate);
 amountEl_two.addEventListener("input", calculate);
+
+// eventlistener to swap the exchange rates
+swap.addEventListener("click", () => {
+  const temp = currencyEl_one.value;
+  currencyEl_one.value = currencyEl_two.value;
+  currencyEl_two.value = temp;
+  calculate();
+});
 calculate();
