@@ -38,7 +38,7 @@ amountEl_one.addEventListener("input", calculate);
 currencyEl_two.addEventListener("change", calculate);
 amountEl_two.addEventListener("input", calculate);
 
-// eventlistener to swap the exchange rates
+// eventlistener to swap the exchange rates when button is clicked
 swap.addEventListener("click", () => {
   const temp = currencyEl_one.value;
   currencyEl_one.value = currencyEl_two.value;
